@@ -26,10 +26,13 @@ describe('Todo controller tests', function(){
 
         });
     });
-    describe('mark as done', function(){
-       it('task should be marked as done', function(){
+    describe('mark/unmark all as done', function(){
+       it('mark all - all task should be marked as done', function(){
 
-       })
+       });
+       it('unmark all - all task should not be marked as done', function(){
+
+       });
     });
     describe('clear', function(){
         it('clear a task - should not be at the model', function(){
