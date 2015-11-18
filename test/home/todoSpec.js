@@ -10,11 +10,34 @@ describe('Todo controller tests', function(){
     }));
 
     /* tests */
-    it('default msg', function(){
-        expect(scope.msg).toBe('hello world');
+    describe('startup', function(){
+        it('list should be empty', function(){
+
+        });
     });
-    it('change msg', function(){
-        scope.changeMsg('new msg');
-        expect(scope.msg).toBe('new msg');
+    describe('add task', function(){
+        it('list should contain a task', function(){
+
+        });
+        it('default priority should be \'normal\'', function(){
+
+        });
+        it('task should not be marked as done', function(){
+
+        });
     });
+    describe('mark as done', function(){
+       it('task should be marked as done', function(){
+
+       })
+    });
+    describe('clear', function(){
+        it('clear a task - should not be at the model', function(){
+
+        });
+        it('clear all - model should contain no values', function(){
+
+        });
+    });
+
 });
