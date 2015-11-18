@@ -21,7 +21,7 @@
             $scope.newTaskName = '';
         };
         $scope.clearTask = function(index){
-            $scope.model.splice(index, 1);
+            if($scope.model[index] && $scope.model[index].done) $scope.model.splice(index, 1);
         };
         $scope.clearAll = function(){
             $scope.model = [];

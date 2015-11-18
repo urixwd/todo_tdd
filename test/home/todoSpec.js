@@ -57,6 +57,12 @@ describe('Todo controller tests', function(){
             scope.clearTask(1);
             expect(_.where(scope.model, {'name': 'second'}).length).toEqual(0);
         });
+        it('clear a task - should not let the deletion on task that is not done', function(){
+            createTasks();
+            var initialLength = scope.model.length;
+            scope.clearTask(0);
+            expect(scope.model.length).toEqual(initialLength);
+        });
         it('clear all - model should contain no values', function(){
             createTasks();
             var initialLength = scope.model.length;
