@@ -4,10 +4,39 @@
         <title>To Do list in Angular JS</title>
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
         <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+
     </head>
     <body>
         <div id="todoapp" ng-controller="todoController">
-            The message is: {{ msg }}
+            <div class="addTask">
+                <input type="text" ng-model = "newTaskName" placeholder="type task's name here" />
+                <button ng-click="addTask(newTaskName);">Add Task</button>
+                <button ng-click="markAllAsDone();">Mark all as done</button>
+                <button ng-click="unMarkAllAsDone();">unMark all</button>
+                <button ng-click="clearAll();">clear all</button>
+                <div style="clear: both;"></div>
+            </div>
+
+            <br><hr /><br>
+            <div ng-if = "model.length" class="tasks">
+                <div ng-repeat="task in model track by $index" class = "task" ng-class="task.done?'done':''">
+                    <span class = "delete-task" style="width: 40px; display: inline-block;text-align: center; cursor: pointer; color: blue;" ng-click="clearTask($index)">[X]</span>
+                    <span style="width: 100px;">
+                        <select ng-model = "task.priority">
+                            <option ng-repeat="p_name in priorities">{{p_name}}</option>
+                        </select>
+                    </span>
+                    <span style="width: 40px;"><input type="checkbox" ng-model="task.done" /></span>
+                    <span style="width: 350px;" class = "task-name" ng-class="task.priority">{{task.name}}</span>
+                </div>
+            </div>
+            <div ng-if = "!model.length">
+                <span style="font-size: 24px;">no tasks</span>
+            </div>
+            <br>
+            <div class="counter">
+                <span>{{model.length}} tasks</span>
+            </div>
         </div>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/controllers/todoController.js"></script>

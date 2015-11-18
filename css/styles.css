@@ -4,3 +4,18 @@ body {
     font-family: 'openSans';
     padding: 50px 150px;
 }
+input { font-size: 16px;}
+.clear{clear: both;}
+.high {background-color: #aa3939;}
+.normal {background-color: #aa6c39;}
+.low {background-color: #2d882d;}
+
+.addTask > * {    float: left;    margin-right: 10px;}
+.task {margin-bottom: 10px;}
+.task > * {    display: inline-block;}
+
+.task .delete-task{visibility: hidden;}
+.task.done .delete-task{visibility: visible;}
+.task.done .task-name{text-decoration: line-through;}
+
+

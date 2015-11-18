@@ -18,6 +18,7 @@
         //public
         $scope.addTask = function(name){
             $scope.model.push({name: name, priority: 'normal', done: false});
+            $scope.newTaskName = '';
         };
         $scope.clearTask = function(index){
             $scope.model.splice(index, 1);

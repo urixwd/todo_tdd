@@ -54,14 +54,14 @@ describe('Todo controller tests', function(){
         it('clear a task - should not be at the model', function(){
             createTasks();
             var initialLength = scope.model.length;
-            scope.clearAll();
-            expect(scope.model.length).toEqual(0);
+            scope.clearTask(1);
+            expect(_.where(scope.model, {'name': 'second'}).length).toEqual(0);
         });
         it('clear all - model should contain no values', function(){
             createTasks();
             var initialLength = scope.model.length;
-            scope.clearTask(1);
-            expect(_.where(scope.model, {'name': 'second'}).length).toEqual(0);
+            scope.clearAll();
+            expect(scope.model.length).toEqual(0);
         });
     });
 });
